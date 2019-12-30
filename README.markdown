@@ -14,3 +14,5 @@ Requires:
 get ffpyplayer to display video, so we can ditch ffplay on subprocess
 
 more episodes
+
+move to json instead of ini config
