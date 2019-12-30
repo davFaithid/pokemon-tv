@@ -1,3 +1,0 @@
-[submodule "ytdl"]
-	path = ytdl
-	url = https://github.com/ytdl-org/youtube-dl
