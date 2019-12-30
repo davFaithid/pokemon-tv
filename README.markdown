@@ -16,3 +16,7 @@ get ffpyplayer to display video, so we can ditch ffplay on subprocess
 more episodes
 
 move to json instead of ini config
+
+# Disclaimer
+
+DISCLAIMER: Any and all content presented in this repository is presented for informational and educational purposes only. I (davFaithid) claim no ownership of any code in these repositories. You (the "user" or "end user") assume any and all responsibility for using this content responsibly. I (davFaithid) claim no responsibiliy or warranty of this product per GNU General Public License revision 3.0 or higher.
