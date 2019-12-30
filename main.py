@@ -1,6 +1,5 @@
 import ytdl
 import sys, os, time
-import cv2, pafy
 from configparser import ConfigParser
 configur = ConfigParser()
 
