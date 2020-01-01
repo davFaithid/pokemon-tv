@@ -1,7 +1,7 @@
 from setuptools import setup
 import py2exe
 
-with open("README.markdown", "r") as fh:
+with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setup(
@@ -22,4 +22,6 @@ setup(
                     "excludes": ["email"]
                 }
         }
+    long_description=long_description,
+    long_description_content_type='text/markdown'
 )
