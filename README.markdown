@@ -7,7 +7,7 @@ Requires:
 
 > [**mpv-1.dll**](https://master.dl.sourceforge.net/project/mpv-player-windows/libmpv/mpv-dev-i686-20180317-git-fbcf2bf.7z) on PATH, 
   configparser,
-  subprocess,
+  python-mpv,
   and python 3.
 
 # TODO:
