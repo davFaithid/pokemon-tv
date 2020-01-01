@@ -11,7 +11,6 @@ Requires:
   and python 3.
 
 # TODO:
-get ffpyplayer to display video, so we can ditch ffplay on subprocess
 
 more episodes
 
