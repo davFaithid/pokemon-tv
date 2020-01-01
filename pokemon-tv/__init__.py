@@ -16,18 +16,18 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 
-import ytdl
 import sys, os, time
 from configparser import ConfigParser
 configur = ConfigParser()
 
 if sys.argv[1] == '-h':
     print("""
-    main.py <seasonnumber> <episodenumber>
+    pokemon-tv <seasonnumber> <episodenumber>
     ie:
-        main.py 1 1
+        pokemon-tv 1 1
     would be episode one of season 1.
           """)
+    sys.exit()
 
 season = sys.argv[1]
 episode = sys.argv[2]
@@ -36,36 +36,21 @@ episode = sys.argv[2]
 configur.read(os.path.expanduser('episodes.ini')) 
 
 pkmnurl = configur.get(season, episode)
-ydl = ytdl.YoutubeDL({'outtmpl': '%(id)s%(ext)s'})
 
-with ydl:
-    result = ydl.extract_info(
-        pkmnurl,
-        download=False # We just want to extract the info
-    )
+print("Loading video at %s" %(pkmnurl))
 
-if 'entries' in result:
-    # Can be a playlist or a list of videos
-    video = result['entries'][0]
-else:
-    # Just a video
-    video = result
+import mpv
 
-video_url = video['url']
+player = mpv.MPV(ytdl=True, input_default_bindings=True, input_vo_keyboard=True)
+player.play(pkmnurl)
+player.wait_for_playback()
 
+del player
 
-import subprocess
-cmds = ['ffplay', '-i', video_url]
-player = subprocess.Popen(cmds, stdout=subprocess.PIPE, shell=True)
-
-try:
-    outs, errs = player.communicate()
-except TimeoutExpired:
-    player.kill()
-    outs, errs = player.communicate()
-
-print("\n\nExiting...")
-time.sleep(5)
+print("\nExiting...")
+time.sleep(3)
 sys.exit()
+
+
 
 

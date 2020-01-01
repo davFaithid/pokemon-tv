@@ -791,11 +791,6 @@ pokemon-tv/ytdl/extractor/zattoo.py
 pokemon-tv/ytdl/extractor/zdf.py
 pokemon-tv/ytdl/extractor/zingmp3.py
 pokemon-tv/ytdl/extractor/zype.py
-pokemon-tv/ytdl/extractortest/__init__.py
-pokemon-tv/ytdl/extractortest/common.py
-pokemon-tv/ytdl/extractortest/extractors.py
-pokemon-tv/ytdl/extractortest/limelight.py
-pokemon-tv/ytdl/extractortest/pokemon.py
 pokemon-tv/ytdl/postprocessor/__init__.py
 pokemon-tv/ytdl/postprocessor/common.py
 pokemon-tv/ytdl/postprocessor/embedthumbnail.py

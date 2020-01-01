@@ -7,7 +7,7 @@ with open("README.markdown", "r") as fh:
 setup(
     name='pokemon-tv',
     version='0.0.2',
-    packages=['pokemon-tv', 'pokemon-tv.ytdl', 'pokemon-tv.ytdl.extractor', 'pokemon-tv.ytdl.downloader', 'pokemon-tv.ytdl.extractortest',
+    packages=['pokemon-tv', 'pokemon-tv.ytdl', 'pokemon-tv.ytdl.extractor', 'pokemon-tv.ytdl.downloader',
               'pokemon-tv.ytdl.postprocessor'],
     url='https://github.com/davFaithid/pokemon-tv',
     license='',
