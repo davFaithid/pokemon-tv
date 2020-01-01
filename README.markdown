@@ -5,7 +5,7 @@ Watch (currently only the first season) of Pokemon in python3.
 # Requirements
 Requires:
 
-> ffplay on PATH, 
+> [**mpv-1.dll**](https://master.dl.sourceforge.net/project/mpv-player-windows/libmpv/mpv-dev-i686-20180317-git-fbcf2bf.7z) on PATH, 
   configparser,
   subprocess,
   and python 3.
