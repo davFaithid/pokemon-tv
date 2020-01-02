@@ -8,6 +8,7 @@ setup(
     name='pokemon-tv',
     version='0.0.3',
     packages=['pokemon-tv'],
+    data_files=[('config', ['pokemon-tv/episodes.ini'])],
     url='https://github.com/davFaithid/pokemon-tv',
     license='',
     author='davFaithid',
