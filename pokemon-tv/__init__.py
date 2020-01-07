@@ -17,40 +17,63 @@
 """
 
 import sys, os, time
-from configparser import ConfigParser
-configur = ConfigParser()
+from urllib.request import urlopen
+import re
+import sys
+from bs4 import BeautifulSoup
+
+def getLinks(url):
+    html_page = urlopen(url)
+    soup = BeautifulSoup(html_page, features="html.parser")
+    links = []
+    if int(sys.argv[1]) < 10:
+        season_number = "0" + str(sys.argv[1])
+    else:
+        season_number = str(sys.argv[1])
+    if int(sys.argv[2]) < 10:
+        episode_number = "0" + str(sys.argv[2])
+    else:
+        episode_number = str(sys.argv[2])
+    for link in soup.findAll('a', attrs={'href': re.compile("/"+season_number+"_"+episode_number+"-")}):
+        links.append(link.get('href'))
+
+    return links
 
 if sys.argv[1] == '-h':
     print("""
-    pokemon-tv <seasonnumber> <episodenumber>
+    main.py <seasonnumber> <episodenumber>
     ie:
-        pokemon-tv 1 1
+        main.py 1 1
     would be episode one of season 1.
           """)
     sys.exit()
 
+"""
 season = sys.argv[1]
 episode = sys.argv[2]
+"""
 
 # Merge in user-specific configuration 
-configur.read(os.path.expanduser('episodes.ini')) 
 
-pkmnurl = configur.get(season, episode)
+baseseason = "https://www.pokemon.com/us/pokemon-episodes/pokemon-tv-seasons/season-"+sys.argv[1]
+link1 = str(getLinks(str(baseseason))).strip('[]')
+link2 = link1.replace("'/us/", "https://www.pokemon.com/us/")
+pkmnurl = str(link2).strip("''")
 
-print("Loading video at %s" %(pkmnurl))
+if pkmnurl.endswith("?play=true") == True:
+    print("Loading video at %s" %(pkmnurl))
+    import mpv
 
-import mpv
+    player = mpv.MPV(ytdl=True, input_default_bindings=True, input_vo_keyboard=True)
+    player.play(pkmnurl)
+    player.wait_for_playback()
 
-player = mpv.MPV(ytdl=True, input_default_bindings=True, input_vo_keyboard=True)
-player.play(pkmnurl)
-player.wait_for_playback()
+    del player
 
-del player
-
-print("\nExiting...")
-time.sleep(3)
-sys.exit()
-
-
-
-
+    print("\nExiting...")
+    time.sleep(3)
+    sys.exit()
+else:
+    print("Video is not available for playback.")
+    sys.exit()
+   
