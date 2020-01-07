@@ -1,7 +1,6 @@
 README.md
 setup.py
 pokemon-tv/__init__.py
-pokemon-tv/episodes.ini
 pokemon_tv.egg-info/PKG-INFO
 pokemon_tv.egg-info/SOURCES.txt
 pokemon_tv.egg-info/dependency_links.txt
