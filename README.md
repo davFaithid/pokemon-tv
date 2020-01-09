@@ -12,9 +12,6 @@ Requires:
 
 # TODO:
 
-more episodes
-
-move to json instead of ini config
 
 # Disclaimer
 
