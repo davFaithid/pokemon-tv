@@ -1,6 +1,6 @@
 """
-    Watch (currently only the first season) of Pokemon in python3
-    Copyright (C) 2019  davFaithid
+    Watch Pokemon in python3
+    Copyright (C) 2020  davFaithid
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -90,7 +90,4 @@ if pkmnurl.endswith("?play=true") == True:
 else:
     print("Video is not available for playback.")
     sys.exit()
-<<<<<<< HEAD
-=======
-   
->>>>>>> 1be230f1900cf738250534e4ff8f0a6ffdd1cbe8
+
