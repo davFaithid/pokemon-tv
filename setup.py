@@ -6,13 +6,14 @@ with open("README.md", "r") as fh:
 
 setup(
     name='pokemon-tv',
-    version='0.1',
+    version='0.2',
     packages=['pokemon-tv'],
+    data_files=[('icon', ['pokemon-tv/icon.png'])]
     url='https://github.com/davFaithid/pokemon-tv',
     license='GPL-3.0',
     author='davFaithid',
     author_email='',
-    description='Watch (currently only the first season) of Pokemon in python3.',
+    description='Watch Pokemon in python3.',
     console=['pokemon-tv/__init__.py'],
     options={
             "py2exe":{

@@ -21,6 +21,10 @@ from urllib.request import urlopen
 import re
 import sys
 from bs4 import BeautifulSoup
+from PyQt5.QtWidgets import *
+from PyQt5.QtCore import *
+from PyQt5.QtGui import *
+import mpv
 
 def getLinks(url):
     html_page = urlopen(url)
@@ -48,32 +52,41 @@ if sys.argv[1] == '-h':
           """)
     sys.exit()
 
-"""
-season = sys.argv[1]
-episode = sys.argv[2]
-"""
-
-# Merge in user-specific configuration 
-
-baseseason = "https://www.pokemon.com/us/pokemon-episodes/pokemon-tv-seasons/season-"+sys.argv[1]
+baseseason = "https://www.pokemon.com/us/pokemon-episodes/pokemon-tv-seasons/season-"+sys.argv[1]+"/"
 link1 = str(getLinks(str(baseseason))).strip('[]')
 link2 = link1.replace("'/us/", "https://www.pokemon.com/us/")
 pkmnurl = str(link2).strip("''")
 
+def play(url):
+    class MainWin(QMainWindow):
+        def __init__(self, parent=None):
+            super().__init__(parent)
+            self.container = QWidget(self)
+            self.setCentralWidget(self.container)
+            self.container.setAttribute(Qt.WA_DontCreateNativeAncestors)
+            self.container.setAttribute(Qt.WA_NativeWindow)
+            self.setWindowTitle("Pokemon TV")
+            self.setWindowIcon(QIcon('icon.png'))
+            self.resize(1000, 563)
+
+            player = mpv.MPV(wid=str(int(self.container.winId())), ytdl=True, input_default_bindings=True, input_vo_keyboard=True)
+            @player.on_key_press('esc')
+            def my_key_binding():
+                print('')
+                sys.exit(app.exec_())
+            player.play(url)
+        #   player.wait_for_playback()
+            del player
+    app = QApplication(sys.argv)
+    import locale
+    locale.setlocale(locale.LC_NUMERIC, 'C')
+    win = MainWin()
+    win.show()
+    sys.exit(app.exec_())
+
 if pkmnurl.endswith("?play=true") == True:
     print("Loading video at %s" %(pkmnurl))
-    import mpv
-
-    player = mpv.MPV(ytdl=True, input_default_bindings=True, input_vo_keyboard=True)
-    player.play(pkmnurl)
-    player.wait_for_playback()
-
-    del player
-
-    print("\nExiting...")
-    time.sleep(3)
-    sys.exit()
+    play(pkmnurl)
 else:
     print("Video is not available for playback.")
     sys.exit()
-   
