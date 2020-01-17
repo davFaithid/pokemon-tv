@@ -8,7 +8,7 @@ setup(
     name='pokemon-tv',
     version='0.2',
     packages=['pokemon-tv'],
-    data_files=[('icon', ['pokemon-tv/icon.png'])]
+    data_files=[('icon', ['pokemon-tv/icon.png'])],
     url='https://github.com/davFaithid/pokemon-tv',
     license='GPL-3.0',
     author='davFaithid',
