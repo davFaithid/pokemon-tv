@@ -45,9 +45,9 @@ def getLinks(url):
 
 if sys.argv[1] == '-h':
     print("""
-    main.py <seasonnumber> <episodenumber>
+    pokemon-tv <seasonnumber> <episodenumber>
     ie:
-        main.py 1 1
+        pokemon-tv 1 1
     would be episode one of season 1.
           """)
     sys.exit()
@@ -90,3 +90,7 @@ if pkmnurl.endswith("?play=true") == True:
 else:
     print("Video is not available for playback.")
     sys.exit()
+<<<<<<< HEAD
+=======
+   
+>>>>>>> 1be230f1900cf738250534e4ff8f0a6ffdd1cbe8
