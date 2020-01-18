@@ -1,2 +1,4 @@
 python-mpv==0.4.5
-pyqt5==12.7.0
+pyqt5
+bs4
+youtube-dl
