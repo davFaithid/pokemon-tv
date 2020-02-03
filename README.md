@@ -27,3 +27,15 @@ Available Seasons:
 # Why I am doing this
 
 I'm not doing this because I hate Pokemon and want to belittle any portion of the The Pokemon Company International, GameFreak, Creatures Inc., or Nintendo. I do this because I love Pokemon, I enjoy the show, I still watch it to this day. When there is a new movie, I go to see it on opening day. I am a Pokenerd, who wants to share this wonderful franchise and the splendid TV show. While, yes, the dub can be a bit quirky, and the show does have its lesser moments, it is still something nostalgic and simply a fun kid's show. 
+
+# Credits
+
+Credits where credit is due.
+
+jaseg's awesome mpv [python interface](https://github.com/jaseg/python-mpv/)
+
+[TheBeastGamer (B3eastTech)](https://github.com/B3astTech) for bug testing
+
+and finally
+
+All Parties and Individuals who have or currently work on the Pokemon franchise.
