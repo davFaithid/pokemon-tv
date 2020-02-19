@@ -5,7 +5,7 @@ Watch almost all seasons* of Pokemon in python3.
 # Requirements
 Requires:
 
-> [**mpv-1.dll**](https://master.dl.sourceforge.net/project/mpv-player-windows/libmpv/mpv-dev-i686-20180317-git-fbcf2bf.7z)  ([archive](http://web.archive.org/web/20200117034440if_/https://master.dl.sourceforge.net/project/mpv-player-windows/libmpv/mpv-dev-i686-20180317-git-fbcf2bf.7z)) on PATH, 
+> libmpv | Windows: [**mpv-1.dll**](https://master.dl.sourceforge.net/project/mpv-player-windows/libmpv/mpv-dev-i686-20180317-git-fbcf2bf.7z)  ([archive](http://web.archive.org/web/20200117034440if_/https://master.dl.sourceforge.net/project/mpv-player-windows/libmpv/mpv-dev-i686-20180317-git-fbcf2bf.7z)) Mac: [**libmpv.1.dylib**](https://github.com/Ivshti/libmpv/blob/master/mac/lib/libmpv.1.dylib) Linux: [this](https://pkgs.org/download/libmpv) or [this](https://pkgs.org/download/libmpv-dev) | on PATH,
   configparser,
   python-mpv,
   and python 3.
